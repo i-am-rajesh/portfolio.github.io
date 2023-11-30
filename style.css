@@ -41,7 +41,7 @@ html, body
 }
 
 .span-col {
-	color: #ffbf35;
+	color: #35f8ff;
 }
 
 nav {
@@ -83,8 +83,8 @@ nav a {
 	margin-top: 20px;
 	border-radius: 50%;
 	text-align: center;
-	border: 2px solid #ffbf35;
-	color: #ffbf35;
+	border: 2px solid #35f8ff;
+	color: #35f8ff;
 	margin-left: 10px;
 	height: 50px;
 	width: 50px;
@@ -115,7 +115,7 @@ nav a {
 	font-size: 35px;
 	text-align: center;
 	margin-bottom: 50px;
-	color: #ffbf35;
+	color: #35f8ff;
 }
 .about-img {
 	width: 100%;
@@ -160,13 +160,13 @@ table td {
 }
 
 .skill div span {
-	background: #ffbf35;
+	background: #35f8ff;
 	height: 5px;
 	float: left;
 }
 
 div[role="progressbar"] {
-	color: #ffbf35;
+	color: #35f8ff;
 	margin-left: 100px;
 	margin-bottom: 20px;
 	width: 100px;
@@ -180,7 +180,7 @@ div[role="progressbar"] {
 
 	--pgPercentage: var(--value);
 	background: radial-gradient(closest-side, black 80%, transparent 0 99.9%, black 0),
-		conic-gradient(#ffbf35 calc(var(--pgPercentage) * 1%), #ffe6af 0);
+		conic-gradient(#35f8ff calc(var(--pgPercentage) * 1%), rgb(175, 250, 255) 0);
 
 }
 /*****EXPERIENCE SECTION*****/
@@ -213,7 +213,7 @@ div[role="progressbar"] {
 	font-size: 20px;
 }
 .experience-content h3 {
-	color: #ffbf35;
+	color: #35f8ff;
 	font-weight: 500;
 	margin-bottom: 2px;
 	font-size: 17px;
