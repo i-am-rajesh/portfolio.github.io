@@ -4,7 +4,7 @@
 	margin: 0;
 	padding: 0;
 	-outline: 0;
-	font-family Roboto, sans-serif, arial;
+	font-family: Roboto, sans-serif, arial;
 }
 html, body 
 	{
@@ -41,6 +41,9 @@ html, body
 }
 
 .span-col {
+	color: #35f8ff;
+}
+nav a:hover{
 	color: #35f8ff;
 }
 
