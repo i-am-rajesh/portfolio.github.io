@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
 <title>Form Submit to Send Email</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
@@ -15,7 +15,7 @@ if(!empty($_POST["send"])) {
 	$userMessage = $_POST["userMessage"];
 	$toEmail = $_POST["rajeshcoder24@gmail.com"];
   
-	$mailHeaders = "Name: " . $userName .
+	$mailHeaders = "Subject " . $userSubject .
 	"\r\n Email: ". $userEmail  . 
 	"\r\n Subject: ". $userSubject  . 
 	"\r\n Message: " . $userMessage . "\r\n";
@@ -25,35 +25,39 @@ if(!empty($_POST["send"])) {
 	}
 }
 ?>
-
-<div class="form-container">
-  <form name="contactFormEmail" method="post">
-    <div class="input-row">
-      <label>Name <em>*</em></label> 
-      <input type="text" name="userName" required id="userName"> 
+<div class= "container">
+<div class="row">
+<form name="custom_form" class="contact-form padd-15" > 
+        <div class="contact-inputs">
+                                    
+        <div class="contact-content">
+             <input type="email" class="contact-input">
+             <label for="" class="contact-label" id="userEmail">Email</label>
+             <span></span>
+        </div>
+                        
+                                    
+        <div class="contact-content">
+             <input type="text" class="contact-input">
+             <label for="" class="contact-label" id="userSubject" >Subject</label>
+             <span></span>
+        </div>
+                        
+        <div class="contact-content contact-area">
+              <textarea name=""  cols="30" rows="10" class="contact-input"></textarea>
+              <label for="" class="contact-label" id="userMessage">Message</label>
+              <span></span>
+        </div>	
+    <input type="submit" value="Send Message" name="send" class="btn btn-default">
+        <?php if (! empty($message)) {?>
+             <div class="success">
+                <strong><?php echo $message; ?>	</strong>
+             </div>
+         <?php } ?>
     </div>
-    <div class="input-row">
-      <label>Email <em>*</em></label> 
-      <input type="email" name="userEmail" required id="userEmail"> 
-    </div>
-    <div class="input-row">
-      <label>Phone <em>*</em></label> 
-      <input type="text" name="userPhone" required id="userPhone">
-    </div>
-    <div class="input-row">
-      <label>Message <em>*</em></label> 
-     <!-- <textarea name="userMessage" required id="userMessage"> -->
-    </div>
-    <div class="input-row">
-      <input type="submit" name="send" value="Submit">
-      <?php if (! empty($message)) {?>
-      <div class='success'>
-        <strong><?php echo $message; ?>	</strong>
-      </div>
-      <?php } ?>
-    </div>
-  </form>
-</div>
+ </form>
+        </div>
+        </div>
 
 </body>
 </html>
