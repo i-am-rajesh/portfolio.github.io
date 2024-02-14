@@ -113,11 +113,6 @@ img{
     vertical-align: middle;
 }
 
-ul
-{
-    list-style:none ;
-}
-
 a
 {
     text-decoration: none;
@@ -144,10 +139,7 @@ h3
 }
 
 .card {
-        border: 10px 20px 20px 40px;
-        margin-left: 10%;
-	width: fit-content;
-	height: fit-content;
+    margin: 30px 0px 30px 0px;
 	background:rgb(183, 224, 221); 
 	display: flex;
 	align-items: center;
@@ -207,27 +199,37 @@ h3
   }
   
   @keyframes slide-in-top {
-	0% {
-	  transform: translateY(-50px);
-	  opacity: 0;
-	}
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
   
-	100% {
-	  transform: translateY(0);
-	  opacity: 1;
-	}
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
+  
 
 /* LAYOUT */
 
 .container{
-    max-width: 80%;
+    max-width: 500px;
     margin: auto;
     position: relative;
-}
-
-.row{
     
+}
+.about-flex{
+    
+}
+.row{
+    flex-wrap: wrap;
+}
+.row-education{
+    display: flex ;
+    flex-wrap: wrap;
+}
+.row-skill{
     display: flex ;
     flex-wrap: wrap;
 }
@@ -288,11 +290,17 @@ animation-iteration-count: 1 ;
         transform: scale(1);
     }
  }
-
+.cv-btn{
+    margin: 0% 30% 0% 30%;
+}
 .cv-btn .btn{
     right: 2rem;
     margin: 2rem;
     position: relative;
+    align-items: center;
+    text-align: center;
+    text-wrap: nowrap;
+   
  }
 /* header  */
 .header{
@@ -516,7 +524,7 @@ color: var(--color-primary);
     border-radius: 50%;
     flex :0% 0% 25%;
     width: 300px;
-    height: 300px;
+
 }
 
 
@@ -527,17 +535,18 @@ color: var(--color-primary);
     border-radius: 10%;
 }
 
-.about-content{
+.about-content p{
     flex :0% 0% 75%;
     max-width: 75%;
-
+    font-weight: 700px;
 }
 
-.about-content .about-text,
+.about-content ,
 .about-content .skills
 {
     flex: 0 0 50%;
-    max-width: 50%;
+    max-width: 100%;
+    width: 100%;
 }
 
 .rounded{
@@ -548,12 +557,6 @@ color: var(--color-primary);
    border-radius: var(--border-radius);
 }
 
-.about-text p{
-    text-align: justify;
-    margin-bottom: var(--m-2);
-    width: 100%;
-
-}
 
 .about-content .skills .skill-item
 {
@@ -567,7 +570,7 @@ color: var(--color-primary);
 .about-content .skills .skill-item .progress
 {
     background-color: var(--color-light);
-    height: 1.3rem;
+    height: 30%;
     border-radius: var(--border-radius);
     width: 100%;
     position: relative;
@@ -611,81 +614,20 @@ color: var(--color-primary);
     color: var(--color-dark);
 }
 
-/* services */
 
-.service-item-inner:hover{
-    
-    /* border: .225rem  groove rgb(218, 238, 145); */
-    box-shadow: inset 5px 3px 1px 1px rgb(99, 169, 209);
-    transition: 0.3s;
-}
-
-.service-item-inner img
-{
-    margin-bottom: var(--m-0-75);
-    padding: 2rem;
-    width: 100%;
-    height: 23rem ;
-    padding-bottom: 3rem;
-    border-radius:  45%;
-}
-
-/* .service-item h3 ,p{
-    padding:2rem;
-   } */
-
-.services .service-item {
-flex :0 0 33.33%;
-max-width: 33.33%;
-display: flex;
-}
-
-.services .service-item .service-item-inner
-{
-  border-radius: var(--border-radius);
-  /* padding: var(--card-padding); */
-  text-align: center;
-  transform: translateY(0);
-  transition: 0.3s;
-}
-
-.services .service-item .service-item-inner:hover
-{
-  /* z-index: 10; */
-    transform: translateY(-0.625rem);
-    transform: scale(1.09);
-    
-}
-
-.service-item h3{
-    margin-bottom: var(--m-1-5);
-    
-}
-
-.text
-{
-text-align: center;
-margin-top: var(--m-2-5);
-}
-
-.text a
-{
-
-color: var(--color-primary);
-}
 
 /* expereince */
 
 .education
 {
-    flex:  0 50%;
-    max-width: 50%;
+    flex:  0 100%;
+    max-width: 100%;
 }
 
-.experience
+.experience 
 {
-    flex:0 0 50%;
-    max-width: 50%;
+
+    max-width: 100%;
 }
 
 .timeline-box
@@ -802,7 +744,13 @@ position: relative;
     max-width: 33.33%;
     margin-bottom: var(--m-2-5);
 }
-
+.portfolio-item
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+   
+}
 .portfolio-item.hide
 {
     display: none;
@@ -923,6 +871,7 @@ position: relative;
 }
 
 /* contact me  */
+
 
 
 .contact-box
@@ -1061,40 +1010,50 @@ max-height: 100%;
  {
      .about-content,
      .about-img
-     {
-        flex: 0 0 100%;
+     { 
+        flex: 0 0 100PX;
          max-width: 100%;
+         width: 100%;
      }
 
-     .about-img
-     {
-         text-align: center;
-         margin-bottom: var(--m-2-5);
-     }
-
-     .services .service-item
-     {
-        flex: 0 0 50%;
-        max-width: 50%;
-        margin-bottom: var(--m-2-5);
+   .progress{
+    max-width: 100%;
+    width: 100%;
+   }
+   
+    .btn .cv-btn{
+        max-width: 100%;
+        width: 100%;
+        text-transform: capitalize;
+    }
+    .container{
+        max-width: 500px;
     }
 
     .portfolio-item.best
     {
         padding: var(--card-padding)  ;
     }
+    .education .experience{
+        flex: 0 0 100%;
+        max-width: 100%;
+        width:100px;
+        height: 100%;
+        align-items: center;
+        
+     }
+     .portfolio-item
+     {
+         flex: 0 0 100%;
+         max-width: 100%;
+         width: 100%;
+        
+     }
+    
  }
 
  @media only screen and (max-width: 840px){
   
-    .services .service-item
-    {
-
-       flex: 0 0 100%;
-       max-width: 100%;
-       margin-bottom: var(--m-2-5);
-   }
-
    body{
     margin: var(--header-height) 0 0 0;
 }
@@ -1129,6 +1088,13 @@ max-height: 100%;
     transition: .3s;
 }
 
+.education .experience{
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+    align-items: center;
+ }
+
 /* show-menu */
 
 .show-menu{
@@ -1140,62 +1106,23 @@ max-height: 100%;
 {
     display: inline-flex;
 }
-.about-img,
-.about-img img{
-    width:50%;
-    height:50%;
+
+.about-content .about-img {
+    width:100%;
+    height:100%;
+    align-items: center;
+    max-width: 100%;
+}
+.portfolio-item
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+   
 }
  }
 
- @media only screen and (max-width:688px)
-    {
-    .container
-      {
-       max-width:  0px;
-      }
-     .services .service-item-inner{
-        margin: auto;
-        max-width: 80%;
-        align-items: center;
-   }
-
-   .timeline-box{
-       margin: auto;
-       align-items: center;
-       padding: 0;
-   }
-
-
-     .contact-data,
-     .contact-form,
-     .education ,
-     .experience ,
-     .services .service-item,
-     .about-content .about-text,
-     .about-content .skills{
-           flex: 0 0 100%;
-           max-width: 100%;
-           
-     }
-     
-     .fact-item,
-     .portfolio-item
-     {
-         flex: 0 0 50%;
-         max-width: 50%;
-        
-     }
-     .about-content .about-text
-     {
-         margin-bottom: var(--m-1-5) ;
-     }
-      .education,
-      .contact-data
-          {
-         margin-bottom: var(--m-2-5) ;
-         }
-
- }
+ 
 
  @media only screen and (max-width:750px)
  {
@@ -1215,41 +1142,29 @@ max-height: 100%;
          top:1rem;
         margin: 2rem;
         position: relative;
+        width: fit-content;
+        align-items: center;
      }
+
+    .about-img .about-content {
+         width:50%;
+         height:50%;
+         flex: 0 0 100%;
+         max-width: 100%;
+         align-items: center;
+}
 
      .contact-data,
      .contact-form,
-     .education ,
-     .experience ,
+     .education .experience,
      .services .service-item,
-     .about-content .about-text,
+     .about-content ,
      .about-content .skills{
            flex: 0 0 100%;
            max-width: 100%;
      }
-    .fact-item
-{
-    margin-top: var(--m-2-5);
-    text-align: center;
-    position: relative;
-    padding: 1rem;
-
-    
-}
-
-.fact-item-row{
-    
-    align-items: center;
-    
-}
-     .services ,
-     .service-item-inner{
-    
-        margin-bottom:  1rem;
-        max-width: 100%;
-        
-   }
      .portfolio-item,
+     .experience ,
      .portfolio-item-inner,
      .portfolio-item-inner h3
      {
@@ -1257,7 +1172,67 @@ max-height: 100%;
          flex: 0 0 100%;
          max-width: 100%;
      }
+     .cv-btn{
+        text-align: center;
+        max-width: 100%;
+        width: 50%;
+        align-items: center;
+     }
 
+ }
+
+ @media only screen and (max-width:688px)
+    {
+    .container
+      {
+       max-width:  500px;
+      }
+
+   .timeline-box{
+       margin: auto;
+       align-items: center;
+       padding: 0;
+   }
+
+
+     .contact-data,
+     .contact-form,
+     .education ,
+     .experience ,
+     .about-content,
+     .about-content .skills{
+           flex: 0 0 100%;
+           max-width: 100%;
+           align-items: center;
+     }
+     
+     .fact-item,
+     .portfolio-item
+     {
+         flex: 0 0 50%;
+         max-width: 50%;
+        
+     }
+     .about-img ,
+     .about-content 
+     {
+        max-width: 100%;
+        width: 100%;
+        align-items: center;
+         margin-bottom: var(--m-1-5) ;
+     }
+      .education,
+      .contact-data
+          {
+         margin-bottom: var(--m-2-5) ;
+         }
+         .portfolio-item
+         {
+             flex: 0 0 100%;
+             max-width: 100%;
+             width: 100%;
+            
+         }
  }
 
  @media only screen and (max-width: 510px)
@@ -1275,38 +1250,56 @@ max-height: 100%;
         margin: 0;
     }
 
-    .social-icons
-    {
-        display: inline-flex;
-    }
-
     .services{
          padding: 0;
     }
 
     .about-content .rounded,
-    .about-content .rounded .about-text,
+    .about-content .rounded,
     .services .service-item 
     {
-      padding: 1px;
+      padding: 3px;
       
     }
-    .service-item,
-    .service-item-inner img{
-        width: 100%;
-        height: 10%;
-    }
-
      .skills .skill-item .skill-percent{
        
        align-items: center;
 
     }
+    
+      .social-icons{
+        align-items: center;
+        width:80%;
+      }
+      .timeline{
+        width: 350px;
+        padding: 20px 40px 20px 40px;
+        margin-right: 60px;
+      }
+
+      .card {
+        max-width: 300%;
+        width: 300px;
+        margin: 20px 80px 20px 0px;
+      }
+      .btn{
+        margin-top: 10px;
+      }
+      
 
     .cv-btn
     {
       text-align: center;
     }
-
+   .portfolio-item
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%;
+       
+    }
    
 }
+
+
+  
